@@ -1,3 +1,11 @@
+post '/fbsessions/new' do
+  @user = User.find_or_create_by(fb_id: params[:fb_id])
+  @user.update_attributes(params)
+  @user.save
+  session[:user_id] = @user.id
+  redirect("/users/#{@user.id}")
+end
+
 #sign up
 get '/users/new' do
   erb :'users/new'

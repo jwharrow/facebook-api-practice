@@ -1,14 +1,19 @@
 <header>
   <nav class="nav-bar">
-    <a href="/">home</a>
+    <a href="/" class="nav-link">home</a>
     <% if current_user %>
-      <form class="button-link" method="post" action="/sessions">
+      <!-- <form class="button-link" method="post" action="/sessions">
           <input type="hidden" name="_method" value="delete">
           <button id="logout-button" type="submit">Logout</button>
-      </form>
+      </form> -->
+      <a class='nav-link' id="fblogout">Log out!</a>
     <% else %>
-      <a href="/sessions/new">login</a>
-      <a href="/users/new">register</a>
+      <a class='nav-link' id="fblogin">Let me in!</a>
+      <!-- <a href="/sessions/new">login</a> -->
+      <!-- <a href="/users/new">register</a> -->
+    <!--   <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button> -->
     <% end %>
   </nav>
 </header>
+
