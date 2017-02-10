@@ -1,0 +1,16 @@
+<div class="container">
+
+  <%= erb :_errors %>
+
+  <h1>Log in</h1>
+  <form action="/sessions" method="post">
+    <label for:"email"> Email address </label>
+    <input type="text" name="account[email]" value="<%= @user.try(:email) %>"><br>
+
+    <label for:"password"> Password </label>
+    <input type="password" name="account[password]"><br>
+
+    <input type="submit" value="Submit">
+  </form>
+
+</div>

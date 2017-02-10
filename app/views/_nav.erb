@@ -1,0 +1,14 @@
+<header>
+  <nav class="nav-bar">
+    <a href="/">home</a>
+    <% if current_user %>
+      <form class="button-link" method="post" action="/sessions">
+          <input type="hidden" name="_method" value="delete">
+          <button id="logout-button" type="submit">Logout</button>
+      </form>
+    <% else %>
+      <a href="/sessions/new">login</a>
+      <a href="/users/new">register</a>
+    <% end %>
+  </nav>
+</header>
